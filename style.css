@@ -127,9 +127,11 @@ footer {
     text-align: center;
     padding: 1.5rem;
     margin-top: 2rem;
-    border-top: 1px solid var(--border-color);
     background: rgba(11, 12, 16, 0.8);
     backdrop-filter: blur(5px);
+    border-top: 2px solid;
+    border-image-source: linear-gradient(to right, transparent, var(--border-color), transparent);
+    border-image-slice: 1;
 }
 
 @media (min-width: 992px) {
