@@ -1,14 +1,67 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Consumption Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+    <header>
+        <h1>Energy Consumption Dashboard</h1>
+    </header>
+    <main>
+        <section class="metrics-container">
+            <metric-card title="Total Energy Consumed" value="2580" unit-suffix=" kWh" icon="fas fa-bolt"></metric-card>
+            <metric-card title="Total Cost" value="312.70" unit-prefix="$" icon="fas fa-dollar-sign"></metric-card>
+            <metric-card title="Carbon Footprint" value="980.5" unit-suffix=" kg CO2e" icon="fas fa-leaf"></metric-card>
+            <metric-card title="Uptime" value="99.9" unit-suffix="%" icon="fas fa-chart-line"></metric-card>
+        </section>
+        <section class="charts-container">
+            <div class="chart-wrapper">
+                <h2>Consumption Trend</h2>
+                <canvas id="energy-chart"></canvas>
+            </div>
+            <div class="chart-wrapper">
+                <h2>Consumption by Service</h2>
+                <canvas id="service-chart"></canvas>
+            </div>
+            <div class="chart-wrapper small-chart">
+                <h2>Cost Distribution</h2>
+                <canvas id="cost-chart"></canvas>
+            </div>
+        </section>
+        <section class="data-table-container">
+            <h2>Detailed Consumption Data</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Region</th>
+                        <th>Energy (kWh)</th>
+                        <th>Cost ($)</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Compute Engine</td><td>us-central1</td><td>1200</td><td>130.50</td><td>2024-07-28 10:00</td></tr>
+                    <tr><td>Cloud Storage</td><td>us-east1</td><td>450</td><td>45.20</td><td>2024-07-28 10:00</td></tr>
+                    <tr><td>BigQuery</td><td>europe-west1</td><td>600</td><td>90.00</td><td>2024-07-28 10:00</td></tr>
+                    <tr><td>Kubernetes Engine</td><td>us-central1</td><td>330</td><td>47.00</td><td>2024-07-28 10:00</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Energy Monitoring Corp. All rights reserved.</p>
+    </footer>
+    <script src="main.js"></script>
 </body>
 </html>
