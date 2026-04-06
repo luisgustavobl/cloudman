@@ -8,6 +8,7 @@
     pkgs.nodejs_22
     pkgs.python3
     pkgs.javacc
+    pkgs.javaPackages.compiler.temurin-bin.jre-8
   ];
   # Sets environment variables in the workspace
   env = {};
